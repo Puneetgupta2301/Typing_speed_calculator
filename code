@@ -1,0 +1,26 @@
+from time import *
+import random as r
+def mistake(partext,usertext):
+  error=0;
+  for i in range(len(partext)):
+    try:
+      if partext != usertext:
+        error=error+1
+    except:
+      error=error+1
+  return error
+def speed_time(time_1,time_2,usertext):
+  time_delay=time_2-time_1
+  time_delay=round(time_delay,2)
+  speed=len(usertext)/time_delay
+  print("your typing speed is: " , round(speed), "W/s") 
+  
+test=["Python is a high level high level programming language","It is dynamically typed language used in various domains"]
+test1=r.choice(test)
+print(test1)
+
+time_1=time()
+testinput=input("Start typing: ")
+time_2=time()
+speed_time(time_1, time_2,testinput)
+print("your toal error is", mistake(test1,testinput))
